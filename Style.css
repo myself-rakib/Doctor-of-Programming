@@ -1,0 +1,65 @@
+ul{
+    display: flex;
+    font-size: 25px;
+    column-gap: 15px;
+    list-style: none;
+}
+li{
+    position: relative;
+    cursor: pointer;
+}
+li::after{
+    position: absolute;
+    bottom: -2px;
+    left: -8px;
+    width: 0;
+    height: 3px;
+    filter: blur(0.3px);
+    background: transparent;
+    content: "";
+    
+}
+li:hover::after{
+    animation: ab 2s infinite alternate;
+}
+@keyframes ab{
+    from{
+        width: 20%;
+        height: 0px;
+        background: rgb(255, 242, 0);
+
+    }
+    to{
+        width: 115%;
+        height: 2px;
+        background: rgb(255, 0, 200);
+    }
+}
+li::before{
+    position: absolute;
+    top: -2px;
+    right: -0.3px;
+    width: 0;
+    height: 2px;
+    filter: blur(0.3px);
+    background: transparent;
+    content: "";
+    
+}
+li:hover::before{
+    animation: abc 2s infinite alternate;
+}
+@keyframes abc{
+    from{
+        width: 20%;
+        height: 0px;
+        background: rgb(255, 0, 200);
+
+    }
+    to{
+        width: 115%;
+        height: 2px;
+        background: rgb(255, 242, 0);
+        
+    }
+}
